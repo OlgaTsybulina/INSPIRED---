@@ -8,7 +8,10 @@ export const renderProducts = async (title, params) =>{
     const products = document.querySelector('.goods');
     products.textContent = '';
 
-    const goods = await getData(`${API_URL}/api/goods`, params);
+    const data = await getData(`${API_URL}/api/goods`, params);
+
+    const goods = Array.isArray(data) ? data : data.goods;
+    console.log(goods)
     
     const container = createElement('div', {
         className: 'container',

@@ -1,3 +1,4 @@
+import { searchController } from "../controllers/searchController";
 import { createElement } from "../createElement";
 
 export const search = createElement('div', {
@@ -21,7 +22,7 @@ const form = createElement(
         className: 'search__form',
     }, {
         parent: container,
-        cb() {},
+        cb: searchController
     },
 );
 

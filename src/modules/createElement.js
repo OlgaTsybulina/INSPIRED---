@@ -17,8 +17,8 @@ export const createElement = (tag, attr, {append, appends, parent,  cb} = {}) =>
         parent.append(element);
     }
 
-    if(cb && typeof cd === 'function'){
-        cd(element);
+    if(cb && typeof cb === 'function'){
+        cb(element);
     }
     return element;
 }
